@@ -8,7 +8,7 @@ export const Navigation = () => {
             <Link className={styles.link} to="/generator">Генератор QR-коду</Link>
             <Link className={styles.link} to="/scan">Сканер QR-коду</Link>
             <Link className={styles.link} to="/genHistory">Історія генерації</Link>
-            <Link className={styles.link} to="/scanHistory">Історія сканування</Link>
+            {/*<Link className={styles.link} to="/scanHistory">Історія сканування</Link>*/}
         </nav>
     );
 };
