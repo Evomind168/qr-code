@@ -1,28 +1,104 @@
+/* src/components/GenHistory/GenHistory.module.css */
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin: 2rem auto;
+    max-width: 800px;
     background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
 }
 
 .title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.empty {
+    text-align: center;
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.clearButton {
+    padding: 0.5rem 1rem;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.clearButton:hover {
+    background-color: #dc2626;
 }
 
 .list {
     list-style-type: none;
     padding: 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .listItem {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    font-size: 16px;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    font-size: 1rem;
+    color: #374151;
+    word-break: break-all;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.listItem:last-child {
+    margin-bottom: 0;
+}
+
+.link {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .listItem {
+        font-size: 0.9rem;
+        padding: 0.75rem;
+    }
+
+    .clearButton {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
 }
