@@ -1,5 +1,6 @@
 import { SCAN_DATA } from '../../constants.js';
 import { useEffect, useState } from 'react';
+import './ScanHistory.css';
 
 export const ScanHistory = () => {
     const [scanHistory, setScanHistory] = useState([]);
@@ -11,7 +12,7 @@ export const ScanHistory = () => {
 
     return (
         <div>
-            <h1>Scan History</h1>
+            <h1>Історія сканування</h1>
             <ul>
                 {scanHistory.map((item, index) => (
                     <li key={index}>{item}</li>
