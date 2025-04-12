@@ -1,14 +1,75 @@
- # React + Vite
+```markdown
+# Сканер QR-кодів
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Цей проєкт є React-додатком для сканування QR-кодів.
+Додаток дозволяє сканувати QR-коди, зберігати результати у локальному сховищі та переглядати історію сканувань.
 
-Currently, two official plugins are available:
+## Технології
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** — бібліотека для створення інтерфейсів користувача.
+- **Vite** — інструмент для збірки проєкту з підтримкою HMR.
+- **CSS Modules** — для стилізації компонентів.
+- **LocalStorage** — для збереження даних про відскановані QR-коди.
 
-## Expanding the ESLint configuration
+## Встановлення та запуск
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# qr-code
-# qr-code
+1. Клонуйте репозиторій:
+   ```bash
+   git clone https://github.com/ваш-репозиторій/qr-code-scanner.git
+   ```
+
+2. Перейдіть у папку проєкту:
+   ```bash
+   cd qr-code-scanner
+   ```
+
+3. Встановіть залежності:
+   ```bash
+   npm install
+   ```
+
+4. Запустіть проєкт:
+   ```bash
+   npm run dev
+   ```
+
+5. Відкрийте додаток у браузері за адресою:
+   ```
+   http://localhost:5173
+   ```
+
+## Структура проєкту
+
+```
+src/
+├── components/
+│   ├── QrScanner/
+│   │   ├── QrCodeScanner.jsx       // Компонент для сканування QR-кодів
+│   │   ├── QrCodeScanner.module.css // Стилі для компонента QrCodeScanner
+│   ├── GenHistory/
+│   │   ├── GenHistory.jsx          // Компонент для відображення історії генерації
+│   │   ├── GenHistory.module.css   // Стилі для компонента GenHistory
+│   ├── ScanHistory/
+│   │   ├── ScanHistory.jsx         // Компонент для відображення історії сканувань
+│   │   ├── ScanHistory.module.css  // Стилі для компонента ScanHistory
+├── constants.js                     // Константи проєкту
+├── App.jsx                          // Головний компонент додатка
+├── main.jsx                         // Точка входу в додаток
+```
+
+## Основні функції
+
+- **Сканування QR-кодів**: Використовується компонент `Scanner` з бібліотеки `@yudiel/react-qr-scanner`.
+- **Збереження даних**: Результати сканування зберігаються у `localStorage`.
+- **Перегляд історії**: Компоненти `GenHistory` та `ScanHistory` відображають збережені дані.
+
+## Скрипти
+
+- `npm run dev` — Запуск додатка в режимі розробки.
+- `npm run build` — Збірка додатка для продакшена.
+- `npm run preview` — Перегляд зібраного додатка.
+
+## Вимоги
+
+- Node.js >= 16.0.0
+- npm >= 7.0.0
